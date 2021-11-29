@@ -13,6 +13,8 @@ from argparse import ArgumentParser
 
 import tensorflow as tf
 from utils import get_nist_data
+tf = tf.compat.v1
+tf.disable_eager_execution()
 
 
 n_inputs = 28*28

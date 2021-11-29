@@ -13,8 +13,9 @@ import pickle
 
 from inception_v3 import inception_v3
 from inception_v3 import inception_v3_arg_scope
+import tf_slim as slim
 
-slim = tf.contrib.slim
+# slim = tf.contrib.slim
 
 
 # some utils
@@ -232,10 +233,10 @@ def get_nist_data(mst=True,
         x_valid, x_train = x_train[:5000], x_train[5000:]
         y_valid, y_train = y_train[:5000], y_train[5000:]
     if label_to_categorical:
-        y_test = keras.utils.to_categorical(y_test, num_classes)
-        y_train = keras.utils.to_categorical(y_train, num_classes)
+        y_test = tf.keras.utils.to_categorical(y_test, num_classes)
+        y_train = tf.keras.utils.to_categorical(y_train, num_classes)
     if validation:
-        y_valid = keras.utils.to_categorical(y_valid, num_classes)
+        y_valid = tf.keras.utils.to_categorical(y_valid, num_classes)
     return (x_train, x_valid, x_test), (y_train, y_valid, y_test)
 
 

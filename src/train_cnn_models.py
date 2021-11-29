@@ -9,9 +9,10 @@ import os
 
 import numpy as np
 from argparse import ArgumentParser
-
 import tensorflow as tf
 from utils import get_nist_data
+tf = tf.compat.v1
+tf.disable_eager_execution()
 
 
 # some functions for building a convnet.

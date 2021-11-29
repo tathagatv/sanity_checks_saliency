@@ -19,10 +19,13 @@ from __future__ import division
 from __future__ import print_function
 
 import tensorflow as tf
+tf = tf.compat.v1
+tf.disable_eager_execution()
+import tf_slim as slim
 
 # from nets import inception_utils
 
-slim = tf.contrib.slim
+# slim = tf.contrib.slim
 trunc_normal = lambda stddev: tf.truncated_normal_initializer(0.0, stddev)
 
 """Contains common code shared by all inception models.
